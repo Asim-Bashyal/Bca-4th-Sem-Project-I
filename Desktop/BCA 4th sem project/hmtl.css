@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    background-image: url(movie\ background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+nav{
+    background-color: rgba(197, 196, 196, 0.432);
+    box-shadow: 3px 3px 5px rgba(129, 128, 128, 0.1);
+}
+
+nav :hover{
+    color: rgba(89, 92, 89, 0.5);
+}
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content:flex-end;
+    align-items:center;
+    
+
+}
+nav li{
+    height: 50%;
+    padding: 20px;
+}
+
+
+.logo{
+    height: 50px;
+    width: 10px;
+    
+    
+}
+ nav a{
+    height: 100%;
+    padding: 0 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+ }
+
+
+
+.Login{
+    background-color: rgba(255, 166, 0, 0.705);
+    color: black;
+   
+}
+
+
+
+nav li:first-child{
+    margin-right: auto;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 65vh;
+    width:250px;
+    z-index:999;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+}
+.sidebar li{
+width: 100%;
+
+}
+.sidebar a{
+width:100%;
+  }

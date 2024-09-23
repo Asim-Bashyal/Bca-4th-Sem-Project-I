@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px;
+}
+
+.form-box {
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.otp-field {
+    width: 40px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.otp-field:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.btn-field {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#resendLink {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#resendLink:hover {
+    text-decoration: underline;
+}
+
+#message {
+    color: red;
+    margin-top: 10px;
+}

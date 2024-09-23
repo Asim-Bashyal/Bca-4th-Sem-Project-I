@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="forgot.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1>Forgot Password</h1>
+            <form id="forgotPasswordForm">
+                <div class="input-group">
+                    <div class="input-field">
+                        <input type="email" placeholder="Enter your email" id="email" required>
+                    </div>
+                </div>
+                <div class="btn-field">
+                    <button type="button" id="submitBtn">Send Reset Link</button>
+                </div>
+                <p id="message"></p>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="forgotPassword.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

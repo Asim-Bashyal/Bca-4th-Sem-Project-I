@@ -49,15 +49,26 @@ function showSlider(type){
         next.click();
     }, timeAutoNext)
 }
+
+//login-button
+document.getElementById("login-btn").addEventListener("click", function() {
+    window.open ("/login/siginup.html");
+});
+
+
+
+
+//Details-Buttons
+
 document.getElementById("Details").addEventListener("click", function() {
-    window.open ("/login/siginup.html","_blank");
+    window.open ("/login/siginup.html");
 });
 document.getElementById("Details1").addEventListener("click", function() {
-    window.open ("/login/siginup.html","_blank");
+    window.open ("/login/siginup.html");
 });
 document.getElementById("Details2").addEventListener("click", function() {
-    window.open ("/login/siginup.html","_blank");
+    window.open ("/login/siginup.html");
 });
 document.getElementById("Details3").addEventListener("click", function() {
-    window.open ("/login/siginup.html","_blank");
+    window.open ("/login/siginup.html");
 });

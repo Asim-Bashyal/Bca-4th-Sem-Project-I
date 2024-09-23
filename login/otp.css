@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
+    background-image:linear-gradient(rgba(0,0,50,0.8),rgba(0, 0, 50, 0.664)),url(background\ signup.jpg);
     display: flex;
     justify-content: center;
     align-items: center;

@@ -92,5 +92,5 @@ document.getElementById('signinBtn').addEventListener('click', signIn);
 
 //click here
 document.getElementById("clickhere").addEventListener("click", function() {
-    window.open ("/forgetpass.html","_blank");
-});
+    window.open ("forgetpass.html");
+})

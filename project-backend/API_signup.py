@@ -95,3 +95,44 @@ def user_signup(user: UserSignup):
 
 
 
+#start of signin 
+class UserSignin(BaseModel):
+    email: str
+    password: str
+
+
+@app.post("/signin")
+def user_signin(user: UserSignin):
+    connection = get_db_connection()
+    cursor = connection.cursor()
+
+    try:
+        # Fetch user data by email
+        query = "SELECT id, password FROM user WHERE email = %s"
+        cursor.execute(query, (user.email,))
+        existing_user = cursor.fetchone()
+
+        if not existing_user:
+            raise HTTPException(status_code=400, detail="Invalid email or password.")
+
+        user_id, hashed_password = existing_user
+
+        # Verify the password
+        if not bcrypt.checkpw(user.password.encode('utf-8'), hashed_password.encode('utf-8')):
+            raise HTTPException(status_code=400, detail="Invalid email or password.")
+
+        # Here you can add logic to create a session or JWT token for the user
+
+        return {"message": "User signed in successfully", "user_id": user_id}
+
+    except mysql.connector.Error as err:
+        raise HTTPException(status_code=500, detail=str(err))
+    
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+    finally:
+        cursor.close()
+        connection.close()
+
+

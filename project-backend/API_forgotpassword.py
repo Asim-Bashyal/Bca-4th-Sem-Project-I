@@ -84,14 +84,14 @@ def forgot_password(email: str = Form(...)):
 
     # Create reset token
     reset_token = create_reset_token(email)
-    reset_link = f"http://localhost:5500/reset-password.html?token={reset_token}"
+    reset_link = f"http://localhost:5500/otp.html?token={reset_token}"
 
     # In a real app, you'd send this link via email to the user
     # Here, we simulate by returning the reset link in the response for testing
     return {"message": "Reset password link has been sent", "reset_link": reset_link}
 
 # Route to reset password using the token
-@app.post("/resetpassword")
+@app.post("/otp")
 def reset_password(token: str = Form(...), new_password: str = Form(...)):
     email = verify_reset_token(token)
 

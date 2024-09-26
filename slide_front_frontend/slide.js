@@ -53,19 +53,19 @@ function showSlider(type) {
 
 // Login button
 document.getElementById("login-btn").addEventListener("click", function() {
-    window.location.href = "/login/signin"; // Change this to your actual sign-in route
+    window.location.href = "/login/siginup.html"; // Change this to your actual sign-in route
 });
 
 // Details Buttons
 document.getElementById("Details").addEventListener("click", function() {
-    window.location.href = "/login/signin"; // Change this to your actual sign-in route
+    window.location.href = "/login/siginup.html"; // Change this to your actual sign-in route
 });
 document.getElementById("Details1").addEventListener("click", function() {
-    window.location.href = "/login/signin"; // Change this to your actual sign-in route
+    window.location.href = "/login/siginup.html"; // Change this to your actual sign-in route
 });
 document.getElementById("Details2").addEventListener("click", function() {
-    window.location.href = "/login/signin"; // Change this to your actual sign-in route
+    window.location.href = "/login/siginup.html"; // Change this to your actual sign-in route
 });
 document.getElementById("Details3").addEventListener("click", function() {
-    window.location.href = "/login/signin"; // Change this to your actual sign-in route
+    window.location.href = "/login/signin.html"; // Change this to your actual sign-in route
 });

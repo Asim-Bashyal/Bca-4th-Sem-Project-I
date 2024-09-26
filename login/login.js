@@ -56,11 +56,11 @@ function signIn() {
 
     // Check if fields are filled
     if (!email || !password) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'Email and password are required!',
-        });
+        // Swal.fire({
+        //     icon: 'error',
+        //     title: 'Error',
+        //     text: 'Email and password are required!',
+        // });
         return;
     }
 
@@ -73,7 +73,10 @@ function signIn() {
             icon: "success",
             title: "Message",
             text: response.data.message || "Signin successful!"
+        }).then(() => {
+            window.location.href ="/slide_front_frontend/slide.html";  // Correct the path here if needed
         });
+        
         // Optionally, you can redirect or perform another action on successful signin
     })
     .catch(function (error) {

@@ -28,27 +28,38 @@ function signUp() {
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
 
+    // Input validation
+    if (!name || !email || !password) {
+        Swal.fire({
+            icon: "warning",
+            title: "Validation Error",
+            text: "Please fill in all fields."
+        });
+        return;
+    }
+
     axios.post('http://127.0.0.1:8000/signup', {
         "name": name,
         "email": email,
         "password": password
     })
-      .then(function (response) {
+    .then(function (response) {
         Swal.fire({
             icon: "success",
             title: "Message",
             text: response.data.message
-          });
-      })
-      .catch(function (error) {
-        console.log(error)
+        });
+    })
+    .catch(function (error) {
+        console.log(error);
         Swal.fire({
             icon: "error",
             title: "Message",
-            text: error.response.data.detail
-          });
-      });
+            text: error.response ? error.response.data.detail : "An unexpected error occurred"
+        });
+    });
 }
+
 
 function signIn() {
     const email = document.getElementById('email').value;
@@ -74,7 +85,7 @@ function signIn() {
             title: "Message",
             text: response.data.message || "Signin successful!"
         }).then(() => {
-            window.location.href ="/slide_front_frontend/slide.html";  // Correct the path here if needed
+            window.location.href ="/frontend/slide.html";  // Correct the path here if needed
         });
         
         // Optionally, you can redirect or perform another action on successful signin

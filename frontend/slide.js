@@ -12,12 +12,12 @@ thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
 let timeRunning = 3000;
 let timeAutoNext = 7000;
 
-nextDom.onclick = function() {
-    showSlider('next');    
+nextDom.onclick = function () {
+    showSlider('next');
 }
 
-prevDom.onclick = function() {
-    showSlider('prev');    
+prevDom.onclick = function () {
+    showSlider('prev');
 }
 
 let runTimeOut;
@@ -28,7 +28,7 @@ let runNextAuto = setTimeout(() => {
 function showSlider(type) {
     let SliderItemsDom = SliderDom.querySelectorAll('.moviename .list .item');
     let thumbnailItemsDom = document.querySelectorAll('.moviename .thumbnail .item');
-    
+
     if (type === 'next') {
         SliderDom.appendChild(SliderItemsDom[0]);
         thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
@@ -38,7 +38,7 @@ function showSlider(type) {
         thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
         movienameDom.classList.add('prev');
     }
-    
+
     clearTimeout(runTimeOut);
     runTimeOut = setTimeout(() => {
         movienameDom.classList.remove('next');
@@ -52,20 +52,92 @@ function showSlider(type) {
 }
 
 // Login button
-document.getElementById("login-btn").addEventListener("click", function() {
-    window.location.href = "/login/siginup.html"; // Change this to your actual sign-in route
-});
+
 
 // Details Buttons
-document.getElementById("Details").addEventListener("click", function() {
+// document.getElementById("Details").addEventListener("click", function() {
+//     window.location.href = "/login/siginup.html"; // Change this to your actual sign-in route
+// });
+// document.getElementById("Details1").addEventListener("click", function() {
+//     window.location.href = "/login/siginup.html"; // Change this to your actual sign-in route
+// });
+// document.getElementById("Details2").addEventListener("click", function() {
+//     window.location.href = "/login/siginup.html"; // Change this to your actual sign-in route
+// });
+// document.getElementById("Details3").addEventListener("click", function() {
+//     window.location.href = "/login/signin.html"; // Change this to your actual sign-in route
+// });
+
+
+document.querySelectorAll(".buttons").forEach(btn => {
+    btn.addEventListener("click", function () {
+
+       const hasLoggedIn= localStorage.getItem("hasLoggedIn")
+       if(hasLoggedIn){
+        window.location.href = "../Movie_Book_Page/Book_page.html"; // Change this to your actual sign-in route
+       }else{
+        window.location.href = "../login/siginup.html"; // Change this to your actual sign-in route
+        
+       }
+
+    });
+})
+
+
+const removeLoginCredentialsInLS=()=>{
+    localStorage.removeItem("hasLoggedIn")
+};
+    
+
+
+
+const isUserLoggedIn= localStorage.getItem("hasLoggedIn");
+
+if(isUserLoggedIn){
+    document.querySelector("#login-btn").innerHTML="Sign out";
+    document.querySelector("#login-btn").addEventListener("click",(e)=>{
+        removeLoginCredentialsInLS()
+        document.querySelector("#login-btn").innerHTML="Login";
+        document.getElementById("login-btn").addEventListener("click", function () {
+            window.location.href = "/login/siginup.html"; // Change this to your actual sign-in route
+        });
+    })
+    
+
+}else{
+    document.querySelector("#login-btn").innerHTML="Login";
+    document.getElementById("login-btn").addEventListener("click", function () {
     window.location.href = "/login/siginup.html"; // Change this to your actual sign-in route
 });
-document.getElementById("Details1").addEventListener("click", function() {
-    window.location.href = "/login/siginup.html"; // Change this to your actual sign-in route
+}
+
+document.getElementById('facebook').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open('https://www.facebook.com/StudentCinemas', '_blank');
 });
-document.getElementById("Details2").addEventListener("click", function() {
-    window.location.href = "/login/siginup.html"; // Change this to your actual sign-in route
+
+document.getElementById('instagram').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open('https://www.instagram.com/StudentCinemas', '_blank');
 });
-document.getElementById("Details3").addEventListener("click", function() {
-    window.location.href = "/login/signin.html"; // Change this to your actual sign-in route
+
+document.querySelectorAll('.footer-section a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        if (this.getAttribute('href').startsWith('#')) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                console.log('Target element not found:', targetId);
+            }
+        }
+    });
 });
+
+    // document.getElementById("call-button").addEventListener("click", function(event) {
+    //     event.preventDefault(); 
+    //     window.location.href = "tel:+9779766828620"; 
+    // });
+

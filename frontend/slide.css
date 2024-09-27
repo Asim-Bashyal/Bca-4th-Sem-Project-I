@@ -7,6 +7,56 @@ body{
     font-size: 12px;
 }
 
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown button */
+.dropbtn {
+    background-color:transparent;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.dropdown:hover .dropbtn {
+    background-color: #2980b9;
+}
+
+
 .login-btn {
     background-color: transparent;
     color: white;
@@ -20,7 +70,7 @@ body{
 }
 
 .login-btn:hover {
-    background-color: transparent;
+    background-color: #2980b9;
     transform: translateY(-3px);
 }
 
@@ -333,5 +383,81 @@ header a{
     }
     .moviename .list .item .content .title{
         font-size: 30px;
+    }
+}
+
+.footer {
+    background-color: rgba(128, 128, 128, 0.438);
+    padding: 20px;
+    color: white;
+}
+
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footer-section {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.footer-section h3 {
+    color: #ff6600;
+    margin-bottom: 10px;
+}
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+.footer-section a {
+    color:white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer-section a:hover {
+    color: #ff6600;
+}
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+.social-icons a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+.social-icons a:hover {
+    background-color:rgba(0, 0, 255, 0.486);
+}
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+    font-weight: bold;
+    font-family:  'Times New Roman', Times, serif;
+}
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+    .footer-section {
+        margin-right: 0;
     }
 }

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentCinemas</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .footer {
+            background-color: #f2e8d5;
+            padding: 20px;
+            color: #333;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-section {
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+        .footer-section h3 {
+            color: #ff6600;
+            margin-bottom: 10px;
+        }
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 5px;
+        }
+        .footer-section a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-section a:hover {
+            color: #ff6600;
+        }
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .social-icons a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #333;
+            border-radius: 50%;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .social-icons a:hover {
+            background-color: #ff6600;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #ccc;
+        }
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+            }
+            .footer-section {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ABOUT</h3>
+                <ul>
+                    <li><a href="#about-us">About Us</a></li>
+                    <li><a href="#terms">Terms And Conditions</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>HELP & SUPPORT</h3>
+                <ul>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#faqs">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>FOR BOOKING</h3>
+                <ul>
+                    <li>StudentCinemas</li>
+                    <li><a href="tel:+9779766828620">+977-9766828620</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>SOCIAL</h3>
+                <p>BUTWAL</p>
+                <div class="social-icons">
+                    <a href="#" id="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" id="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            Copyright © 2024 StudentCinemas | All rights reserved | Powered by SageFlick
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('facebook').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open('https://www.facebook.com/StudentCinemas', '_blank');
+        });
+
+        document.getElementById('instagram').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open('https://www.instagram.com/StudentCinemas', '_blank');
+        });
+
+        document.querySelectorAll('.footer-section a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        console.log('Target element not found:', targetId);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

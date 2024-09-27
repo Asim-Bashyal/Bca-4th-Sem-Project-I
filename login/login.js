@@ -24,41 +24,51 @@ signupBtn.onclick = function () {
 
 
 function signUp() {
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
-
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+  
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
     // Input validation
     if (!name || !email || !password) {
-        Swal.fire({
-            icon: "warning",
-            title: "Validation Error",
-            text: "Please fill in all fields."
-        });
-        return;
-    }
-
-    axios.post('http://127.0.0.1:8000/signup', {
-        "name": name,
-        "email": email,
-        "password": password
-    })
-    .then(function (response) {
-        Swal.fire({
+      Swal.fire({
+        icon: "warning",
+        title: "Validation Error",
+        text: "Please fill in all fields.",
+      });
+    } else if (!emailRegex.test(email)) {
+      Swal.fire({
+        icon: "error",
+        title: "Validation Error",
+        text: "Please enter a valid email.",
+      });
+    } else {
+      axios
+        .post("http://127.0.0.1:8000/signup", {
+          name: name,
+          email: email,
+          password: password,
+        })
+        .then(function (response) {
+          Swal.fire({
             icon: "success",
             title: "Message",
-            text: response.data.message
-        });
-    })
-    .catch(function (error) {
-        console.log(error);
-        Swal.fire({
+            text: response.data.message,
+          });
+        })
+        .catch(function (error) {
+          console.log(error);
+          Swal.fire({
             icon: "error",
             title: "Message",
-            text: error.response ? error.response.data.detail : "An unexpected error occurred"
+            text: error.response
+              ? error.response.data.detail
+              : "An unexpected error occurred",
+          });
         });
-    });
-}
+    }
+  }
 
 
 function signIn() {

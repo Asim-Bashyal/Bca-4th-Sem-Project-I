@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-
 /* General styling for the body and header */
 body {
     font-family: 'Poppins', sans-serif;
@@ -20,14 +19,12 @@ body {
 
 .logo-link {
     background-color: transparent;
-    
     cursor: default; /* Removes hover cursor change */
 }
 
 .logo-link:hover {
     background-color: transparent; /* Ensures hover does nothing */
 }
-
 
 header {
     background-color: #f0ebe1;
@@ -66,7 +63,6 @@ nav a {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, transform 0.2s ease;
     margin-right: 10px;
-    margin-left: px;
 }
 
 .homebtn:hover {
@@ -92,7 +88,6 @@ nav a {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, transform 0.2s ease;
     margin-right: 10px;
-    margin-left: 20px;
 }
 
 .dropdown-content {
@@ -151,48 +146,46 @@ nav a.active {
     }
 }
 
+/* Contact Section Styles */
 
-
-.about-section {
+.contact-section {
     background-color: #fff;
-    padding: 10px 0;
-    text-align: center;
+    padding: 30px 0;
+    text-align: center; /* Center text in the section */
 }
 
-.about-section .container {
+.contact-section .container {
     width: 90%;
-    margin: 0 auto;
     max-width: 1100px;
+    margin: 0 auto; /* Center the container */
 }
-
-.about-section h1 {
+.contact-section .container h1{
     color: orange;
-    margin-bottom: 20px;
-    font-size: 40px;
+    margin-top: 25px;
     font-family: 'Times New Roman', Times, serif;
-
+    font-weight: 150px;
 }
-
-.about-section p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    line-height: 1.6;
+.contact-section .container p{
     color: black;
+    
 }
 
 
-.about-details {
-    text-align: left;
+.contact-details {
+    text-align: center; /* Center the text in contact details */
+    color: orange;
 }
 
-.about-details h2 {
-    color: #2980b9;
-    margin: 30px 0 10px;
+.contact-details ul {
+    list-style: none;
+    padding: 0;
+    display: inline-block; /* Align the list horizontally */
 }
 
-.about-details p {
+.contact-details li {
     margin-bottom: 20px;
-    line-height: 1.6;
-    color: black;
+    color: #000;
 }
+
+
 

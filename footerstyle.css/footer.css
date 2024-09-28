@@ -45,7 +45,7 @@ body{
 .footer-section a:hover {
     color: #ff6600;
 }
-.social-icons {
+.footer-section  .social-icons {
     display: flex;
     gap: 10px;
     margin-top: 10px;
@@ -73,6 +73,7 @@ body{
     border-top: 1px solid #ccc;
     font-weight: bold;
     font-family:  'Times New Roman', Times, serif;
+    color: white;
 }
 @media (max-width: 768px) {
     .footer-content {

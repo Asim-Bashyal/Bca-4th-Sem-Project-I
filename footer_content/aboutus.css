@@ -1,15 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-
-/* General styling for the body and header */
+@import url('https://fonts.cdnfonts.com/css/akrobat');
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Akrobat', sans-serif;
+    background-color: #e6e2d7;
     margin: 0;
-    padding: 0;
-    background-color: #f0ebe1;
+    padding: 20px;
     color: #333;
 }
-
 .logo {
     width: 95px; 
     height: 100px; 
@@ -30,14 +26,19 @@ body {
 
 
 header {
-    background-color: #f0ebe1;
+    background-color: #f0ebe1b6;
     padding: 20px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.062);
 }
 
+.gradient-bar {
+    height: 5px;
+    background: linear-gradient(to right, #ff6600, #ff3300, #ff9900);
+    margin-top: 20px;
+}
 /* Styling for navigation */
 nav {
     display: flex;

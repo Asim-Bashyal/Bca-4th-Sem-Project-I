@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-body{
+@import url('https://fonts.cdnfonts.com/css/akrobat');
+body {
+    font-family: 'Akrobat', sans-serif;
+    background-color: #e6e2d7;
     margin: 0;
-    background-color: rgba(128, 128, 128, 0.678);
-    color: #eee;
-    font-family: Poppins;
+    padding: 0;
+    color: black;
     font-size: 12px;
 }
 
-
 .footer {
-    background-color:rgba(0, 0, 0, 0.863);
+    background-color:#f0ebe1b6;
     padding: 15px;
-    color: white;
+    color: black;
     
 }
 .footer-content {
@@ -36,16 +36,18 @@ body{
 }
 .footer-section ul li {
     margin-bottom: 5px;
+    font-size: 15px;
 }
 .footer-section a {
-    color:white;
+    color:black;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: 15px;
 }
 .footer-section a:hover {
     color: #ff6600;
 }
-.footer-section  .social-icons {
+.social-icons {
     display: flex;
     gap: 10px;
     margin-top: 10px;
@@ -73,7 +75,7 @@ body{
     border-top: 1px solid #ccc;
     font-weight: bold;
     font-family:  'Times New Roman', Times, serif;
-    color: white;
+    color: black;
 }
 @media (max-width: 768px) {
     .footer-content {
